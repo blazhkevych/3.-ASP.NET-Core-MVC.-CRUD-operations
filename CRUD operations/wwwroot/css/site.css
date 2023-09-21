@@ -1,5 +1,5 @@
-table {
-    width: 100%;
+#MainTable.table {
+    width: 70%;
     border-collapse: collapse;
     border-spacing: 0
 }
@@ -10,7 +10,7 @@ table, td, th {
 
 td, th {
     padding: 3px;
-    width: 30px;
+    width: auto;
     height: 25px;
 }
 
@@ -28,3 +28,12 @@ td, th {
     display: flex;
     justify-content: center;
 }
+
+.movie-title {
+    font-weight: bold;
+}
+
+h3, p {
+    text-align: center;
+}
+
