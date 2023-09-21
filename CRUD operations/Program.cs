@@ -33,6 +33,6 @@ app.UseAuthorization();
 // Map the default controller route
 app.MapControllerRoute(
     "default",
-    "{controller=Movie}/{action=Index}/{id?}");
+    "{controller=Movies}/{action=Index}/{id?}");
 // Run the application
 app.Run();
