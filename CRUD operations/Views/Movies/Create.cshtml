@@ -8,7 +8,7 @@
 
 <h4>Movie</h4>
 <hr/>
-<div class="row">
+@* <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -47,8 +47,58 @@
             </div>
         </form>
     </div>
-</div>
+</div> *@
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<form asp-action="Create">
+<div class="table-container">
+    <table id="MainTable" class="table">
+        <tbody>
+        @* @foreach (var item in Model)
+        { *@
+            <tr>
+                    <td rowspan="6" class="poster-cell" class="centered" id="CreateViewUploadedFile">
+                    @* <img src="@item.PosterUrl" alt="@item.Title" class="poster-image" /> *@
+                    <input type="file" name="uploadedFileModel" />
+                </td>
+                <td class="movie-title">
+                    @* @Html.DisplayFor(modelItem => item.Title) *@
+                        <input asp-for="Title" class="form-control" placeholder="Enter Title" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @* @Html.DisplayFor(modelItem => item.Director) *@
+                        <input asp-for="Director" class="form-control" placeholder="Enter Director" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @* @Html.DisplayFor(modelItem => item.Genre) *@
+                        <input asp-for="Genre" class="form-control" placeholder="Enter Genre" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @* @Html.DisplayFor(modelItem => item.ReleaseYear) *@
+                        <input asp-for="ReleaseYear" class="form-control" placeholder="Enter ReleaseYear" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @* @Html.DisplayFor(modelItem => item.Description) *@
+                        <input asp-for="Description" class="form-control" placeholder="Enter Description" />
+                </td>
+            </tr>
+        @* } *@
+        </tbody>
+    </table>
 </div>
+</form>
+
+<p>
+    <input type="submit" value="Create" class="btn btn-primary" />
+<br />
+<br />
+
+    <a asp-action="Index">Back to List</a>
+</p>
