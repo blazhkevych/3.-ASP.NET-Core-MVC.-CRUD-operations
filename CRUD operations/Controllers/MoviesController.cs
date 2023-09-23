@@ -57,7 +57,7 @@ public class MoviesController : Controller
     {
         if (ModelState.IsValid)
         {
-            var path = "/img/" + uploadedFile.FileName;
+            var path = "\\img\\" + uploadedFile.FileName;
             using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))
             {
                 await uploadedFile.CopyToAsync(fileStream);
@@ -116,7 +116,7 @@ public class MoviesController : Controller
         {
             try
             {
-                var path = "/img/" + uploadedFile.FileName;
+                var path = "\\img\\" + uploadedFile.FileName;
                 using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))
                 {
                     await uploadedFile.CopyToAsync(fileStream);
