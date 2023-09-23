@@ -52,15 +52,17 @@ public class MoviesController : Controller
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(
-        [Bind("Id,Title,Director,Genre,ReleaseYear,PosterUrl,Description")] Movie movie, IFormFile uploadedFile)
+        [Bind("Id,Title,Director,Genre,ReleaseYear,PosterUrl,Description")]
+        Movie movie, IFormFile uploadedFile)
     {
         if (ModelState.IsValid)
         {
-            string path = "/img/" + uploadedFile.FileName;
+            var path = "/img/" + uploadedFile.FileName;
             using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))
             {
                 await uploadedFile.CopyToAsync(fileStream);
             }
+
             movie.PosterUrl = path;
             _context.Add(movie);
             await _context.SaveChangesAsync();
@@ -87,7 +89,8 @@ public class MoviesController : Controller
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(int id,
-        [Bind("Id,Title,Director,Genre,ReleaseYear,PosterUrl,Description")] Movie movie)
+        [Bind("Id,Title,Director,Genre,ReleaseYear,PosterUrl,Description")]
+        Movie movie)
     {
         if (id != movie.Id) return NotFound();
 

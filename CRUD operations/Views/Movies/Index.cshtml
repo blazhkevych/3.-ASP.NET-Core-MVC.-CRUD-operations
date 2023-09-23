@@ -11,44 +11,44 @@
 <div class="table-container">
     <table id="MainTable" class="table">
         <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td rowspan="6" class="poster-cell">
-                        <img src="@item.PosterUrl" alt="@item.Title" class="poster-image" />
-                    </td>
-                    <td class="movie-title">
-                        @Html.DisplayFor(modelItem => item.Title)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Director)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Genre)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ReleaseYear)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    </td>
-                </tr>
-            }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td rowspan="6" class="poster-cell">
+                    <img src="@item.PosterUrl" alt="@item.Title" class="poster-image"/>
+                </td>
+                <td class="movie-title">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Director)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReleaseYear)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
         </tbody>
     </table>
 </div>

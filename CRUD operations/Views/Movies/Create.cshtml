@@ -1,95 +1,42 @@
 ﻿@model CRUD_operations.Models.Movie
 
-@* @{
-    ViewData["Title"] = "Create";
-} *@
-
 <h1>Create</h1>
 
 <h4>Movie</h4>
-<hr/>
-@* <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control"/>
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Director" class="control-label"></label>
-                <input asp-for="Director" class="form-control"/>
-                <span asp-validation-for="Director" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Genre" class="control-label"></label>
-                <input asp-for="Genre" class="form-control"/>
-                <span asp-validation-for="Genre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ReleaseYear" class="control-label"></label>
-                <input asp-for="ReleaseYear" class="form-control"/>
-                <span asp-validation-for="ReleaseYear" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PosterUrl" class="control-label"></label>
-                <input asp-for="PosterUrl" class="form-control"/>
-                <span asp-validation-for="PosterUrl" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control"/>
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary"/>
-            </div>
-        </form>
-    </div>
-</div> *@
+<hr />
 
 <form asp-action="Create" asp-controller="Movies" method="post" enctype="multipart/form-data">
     <div class="table-container">
         <table id="MainTable" class="table">
             <tbody>
-            @* @foreach (var item in Model)
-        { *@
-            <tr>
-                <td rowspan="6" class="poster-cell" class="centered" id="CreateViewUploadedFile">
-                    @* <img src="@item.PosterUrl" alt="@item.Title" class="poster-image" /> *@
-                    <input type="file" name="uploadedFile" />
-                </td>
-                <td class="movie-title">
-                    @* @Html.DisplayFor(modelItem => item.Title) *@
-                    <input asp-for="Title" class="form-control" placeholder="Enter Title" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @* @Html.DisplayFor(modelItem => item.Director) *@
-                    <input asp-for="Director" class="form-control" placeholder="Enter Director" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @* @Html.DisplayFor(modelItem => item.Genre) *@
-                    <input asp-for="Genre" class="form-control" placeholder="Enter Genre" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @* @Html.DisplayFor(modelItem => item.ReleaseYear) *@
-                    <input asp-for="ReleaseYear" class="form-control" placeholder="Enter ReleaseYear" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @* @Html.DisplayFor(modelItem => item.Description) *@
-                    <input asp-for="Description" class="form-control" placeholder="Enter Description" />
-                </td>
-            </tr>
-            @* } *@
+                <tr>
+                    <td rowspan="6" class="poster-cell" class="centered" id="CreateViewUploadedFile">
+                        <input type="file" name="uploadedFile" />
+                    </td>
+                    <td class="movie-title">
+                        <input asp-for="Title" class="form-control" placeholder="Enter Title" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input asp-for="Director" class="form-control" placeholder="Enter Director" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input asp-for="Genre" class="form-control" placeholder="Enter Genre" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input asp-for="ReleaseYear" class="form-control" placeholder="Enter ReleaseYear" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input asp-for="Description" class="form-control" placeholder="Enter Description" />
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>

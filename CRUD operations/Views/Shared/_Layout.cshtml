@@ -2,33 +2,33 @@
 <html lang="en">
 <head>
     <!-- Set the character encoding for the document -->
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <!-- Set the viewport of the document to scale to the device width, initial scale 1.0 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- Set the title of the document to the ViewData Title and append "Top_10_films" -->
     <title>@ViewData["Title"]</title>
     <!-- Link to the Bootstrap CSS library -->
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <!-- Link to the Top_10_films specific CSS -->
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
 </head>
 <body>
-    @* <header>
+@* <header>
         <div class="text-center">
             <h1>@ViewBag.Title</h1>
         </div>
     </header> *@
-    <!-- Define the main content of the document -->
-    <main role="main">
-        @RenderBody()
-    </main>
-    <!-- Link to the jQuery library -->
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <!-- Link to the Bootstrap JavaScript bundle -->
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Link to the site specific JavaScript -->
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <!-- Render any additional scripts -->
-    @await RenderSectionAsync("Scripts", false)
+<!-- Define the main content of the document -->
+<main role="main">
+    @RenderBody()
+</main>
+<!-- Link to the jQuery library -->
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<!-- Link to the Bootstrap JavaScript bundle -->
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Link to the site specific JavaScript -->
+<script src="~/js/site.js" asp-append-version="true"></script>
+<!-- Render any additional scripts -->
+@await RenderSectionAsync("Scripts", false)
 </body>
 </html>

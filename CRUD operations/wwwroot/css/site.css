@@ -4,9 +4,7 @@
     border-spacing: 0
 }
 
-table, td, th {
-    border-bottom: 1px solid #595959;
-}
+table, td, th { border-bottom: 1px solid #595959; }
 
 td, th {
     padding: 3px;
@@ -14,9 +12,7 @@ td, th {
     height: 25px;
 }
 
-.poster-cell {
-    height: 300px;
-}
+.poster-cell { height: 300px; }
 
 .poster-image {
     max-width: 200px;
@@ -29,13 +25,9 @@ td, th {
     justify-content: center;
 }
 
-.movie-title {
-    font-weight: bold;
-}
+.movie-title { font-weight: bold; }
 
-h1, h3, h4, p {
-    text-align: center;
-}
+h1, h3, h4, p { text-align: center; }
 
 #CreateViewUploadedFile.centered {
     text-align: center;
