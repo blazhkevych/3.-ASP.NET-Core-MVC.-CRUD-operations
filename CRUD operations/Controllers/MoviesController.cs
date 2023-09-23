@@ -90,14 +90,39 @@ public class MoviesController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(int id,
         [Bind("Id,Title,Director,Genre,ReleaseYear,PosterUrl,Description")]
-        Movie movie)
+        Movie movie, IFormFile uploadedFile)
     {
         if (id != movie.Id) return NotFound();
+
+        #region Error checking (errors in cosole)
+
+        // Error checking (errors in cosole)
+        if (!ModelState.IsValid)
+        {
+            foreach (var modelState in ViewData.ModelState.Values)
+            {
+                foreach (var error in modelState.Errors)
+                {
+                    Console.WriteLine(error.ErrorMessage);
+                }
+            }
+        }
+
+        #endregion
+
+        IFormFile аFile = uploadedFile;
 
         if (ModelState.IsValid)
         {
             try
             {
+                var path = "/img/" + uploadedFile.FileName;
+                using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))
+                {
+                    await uploadedFile.CopyToAsync(fileStream);
+                }
+
+                movie.PosterUrl = path;
                 _context.Update(movie);
                 await _context.SaveChangesAsync();
             }

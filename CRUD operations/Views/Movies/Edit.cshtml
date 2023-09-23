@@ -1,14 +1,60 @@
 ﻿@model CRUD_operations.Models.Movie
 
-@{
+@* @{
     ViewData["Title"] = "Edit";
-}
+} *@
 
 <h1>Edit</h1>
 
 <h4>Movie</h4>
-<hr/>
-<div class="row">
+<hr />
+
+<form asp-action="Edit" asp-controller="Movies" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id"/>
+    <div class="table-container">
+        <table id="MainTable" class="table">
+            <tbody>
+            <tr>
+                <td rowspan="6" class="poster-cell" class="centered" id="CreateViewUploadedFile">
+                    <input type="file" name="uploadedFile"/>
+                </td>
+                <td class="movie-title">
+                    <input asp-for="Title" class="form-control" placeholder="Enter Title"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input asp-for="Director" class="form-control" placeholder="Enter Director"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input asp-for="Genre" class="form-control" placeholder="Enter Genre"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input asp-for="ReleaseYear" class="form-control" placeholder="Enter ReleaseYear"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input asp-for="Description" class="form-control" placeholder="Enter Description"/>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>
+        <input type="submit" value="Save" class="btn btn-primary"/>
+    </p>
+</form>
+<br />
+<p>
+    <a asp-action="Index">Back to List</a>
+</p>
+
+@* <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -48,8 +94,4 @@
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+</div> *@
