@@ -10,88 +10,43 @@
 <hr />
 
 <form asp-action="Edit" asp-controller="Movies" method="post" enctype="multipart/form-data">
-    <input type="hidden" asp-for="Id"/>
+    <input type="hidden" asp-for="Id" />
     <div class="table-container">
         <table id="MainTable" class="table">
             <tbody>
-            <tr>
-                <td rowspan="6" class="poster-cell" class="centered" id="CreateViewUploadedFile">
-                    <input type="file" name="uploadedFile"/>
-                </td>
-                <td class="movie-title">
-                    <input asp-for="Title" class="form-control" placeholder="Enter Title"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input asp-for="Director" class="form-control" placeholder="Enter Director"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input asp-for="Genre" class="form-control" placeholder="Enter Genre"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input asp-for="ReleaseYear" class="form-control" placeholder="Enter ReleaseYear"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input asp-for="Description" class="form-control" placeholder="Enter Description"/>
-                </td>
-            </tr>
+                <tr>
+                    <td rowspan="6" class="poster-cell" class="centered" id="CreateViewUploadedFile" style="width: 100px;">
+                        <input type="file" name="uploadedFile" />
+                    </td>
+                    <td class="movie-title">
+                        <input asp-for="Title" class="form-control" placeholder="Enter Title" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input asp-for="Director" class="form-control" placeholder="Enter Director" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input asp-for="Genre" class="form-control" placeholder="Enter Genre" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input asp-for="ReleaseYear" class="form-control" placeholder="Enter ReleaseYear" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input asp-for="Description" class="form-control" placeholder="Enter Description" />
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
     <p>
-        <input type="submit" value="Save" class="btn btn-primary"/>
+        <input type="submit" value="Save" class="btn btn-primary" /> |
+        <a asp-action="Index">Back to List</a>
     </p>
 </form>
-<br />
-<p>
-    <a asp-action="Index">Back to List</a>
-</p>
-
-@* <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id"/>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control"/>
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Director" class="control-label"></label>
-                <input asp-for="Director" class="form-control"/>
-                <span asp-validation-for="Director" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Genre" class="control-label"></label>
-                <input asp-for="Genre" class="form-control"/>
-                <span asp-validation-for="Genre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ReleaseYear" class="control-label"></label>
-                <input asp-for="ReleaseYear" class="form-control"/>
-                <span asp-validation-for="ReleaseYear" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PosterUrl" class="control-label"></label>
-                <input asp-for="PosterUrl" class="form-control"/>
-                <span asp-validation-for="PosterUrl" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control"/>
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary"/>
-            </div>
-        </form>
-    </div>
-</div> *@

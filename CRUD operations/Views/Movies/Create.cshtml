@@ -10,7 +10,7 @@
         <table id="MainTable" class="table">
             <tbody>
                 <tr>
-                    <td rowspan="6" class="poster-cell" class="centered" id="CreateViewUploadedFile">
+                    <td rowspan="6" class="poster-cell" class="centered" id="CreateViewUploadedFile" style="width: 100px;">
                         <input type="file" name="uploadedFile" />
                     </td>
                     <td class="movie-title">
@@ -41,10 +41,8 @@
         </table>
     </div>
     <p>
-        <input type="submit" value="Create" class="btn btn-primary" />
+        <input type="submit" value="Create" class="btn btn-primary" /> |
+        <a asp-action="Index">Back to List</a>
     </p>
 </form>
 <br />
-<p>
-    <a asp-action="Index">Back to List</a>
-</p>
