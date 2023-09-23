@@ -20,7 +20,7 @@ public class Movie
 
     // Declare a string property for the PosterUrl
     // This will be used to store the URL of the movie poster
-    public string PosterUrl { get; set; }
+    public string? PosterUrl { get; set; }
 
     // Declare a string property for the Description
     public string Description { get; set; }

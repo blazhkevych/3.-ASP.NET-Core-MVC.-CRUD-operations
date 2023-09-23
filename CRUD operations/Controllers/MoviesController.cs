@@ -12,10 +12,12 @@ namespace CRUD_operations.Controllers;
 public class MoviesController : Controller
 {
     private readonly MovieContext _context;
+    private readonly IWebHostEnvironment _appEnvironment;
 
-    public MoviesController(MovieContext context)
+    public MoviesController(MovieContext context, IWebHostEnvironment appEnvironment)
     {
         _context = context;
+        _appEnvironment = appEnvironment;
     }
 
     // GET: Movies
@@ -50,12 +52,19 @@ public class MoviesController : Controller
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(
-        [Bind("Id,Title,Director,Genre,ReleaseYear,PosterUrl,Description")] Movie movie)
+        [Bind("Id,Title,Director,Genre,ReleaseYear,PosterUrl,Description")] Movie movie, IFormFile uploadedFile)
     {
         if (ModelState.IsValid)
         {
+            string path = "/img/" + uploadedFile.FileName;
+            using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))
+            {
+                await uploadedFile.CopyToAsync(fileStream);
+            }
+            movie.PosterUrl = path;
             _context.Add(movie);
             await _context.SaveChangesAsync();
+
             return RedirectToAction(nameof(Index));
         }
 
